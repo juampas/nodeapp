@@ -4,9 +4,18 @@ const PORT = process.env.PORT || 5000
 var count = 1;
 
 app.get('/', function (req, res) {
-  //var ip = req.headers['x-forwarded-for'].split(',')[0];
-  var message = `App Node Count : ${count++} <br/> My IP Address  : ${req.ip}`;
-  res.send(message);
+  
+  var ipAddr = req.headers["x-forwarded-for"];
+  if (ipAddr){
+    var list = ipAddr.split(",");
+    ipAddr = list[list.length-1];
+  } else {
+    ipAddr = req.connection.remoteAddress;
+  }
+  
+  var message = `App Node Count : ${count++} <br/> My IP Address  : ${ipAddr}`;
+  
+  res.send(message);  
   console.log(message);
 });
 
