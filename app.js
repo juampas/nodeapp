@@ -4,7 +4,8 @@ const PORT = process.env.PORT || 5000
 var count = 1;
 
 app.get('/', function (req, res) {
-  res.send(`App Node : ${count} - ${req.connection.remoteAddress}`);
+  res.send(`App Node Count : ${count}`);
+  res.send(`My IP Address  : ${req.connection.remoteAddress}`);
   console.log(`Execute : ${count++} - ${req.connection.remoteAddress}`);
 });
 
