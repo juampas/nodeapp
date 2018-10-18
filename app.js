@@ -4,9 +4,9 @@ const PORT = process.env.PORT || 5000
 var count = 1;
 
 app.get('/', function (req, res) {
-  var message = `App Node Count : ${count} My IP Address  : ${req.connection.remoteAddress}`;
+  var message = `App Node Count : ${count++} \n My IP Address  : ${req.connection.remoteAddress}`;
   res.send(message);
-  console.log(`Execute : ${count++} - ${req.connection.remoteAddress}`);
+  console.log(message);
 });
 
 app.listen(PORT, function () {
