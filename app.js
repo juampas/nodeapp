@@ -19,6 +19,10 @@ app.get('/', function (req, res) {
   console.log(message);
 });
 
+app.get('/version', function (req, res) {
+  res.send(`Version 1.0`);  
+});
+
 app.listen(PORT, function () {
   console.log(`Example app listening on port ${PORT}`);
 });
