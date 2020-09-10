@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
     ipAddr = req.connection.remoteAddress;
   }
   
-  var message = `> WebAppNode Count : ${count++} <br/> My IP Address  : ${ipAddr} <`;
+  var message = `<br/> > WebAppNode Count : ${count++} < <br/> > My IP Address  : ${ipAddr} <`;
   
   res.send(message);  
   console.log(message);
